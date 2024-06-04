@@ -1,0 +1,1905 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/myontology#"
+     xml:base="http://www.example.org/myontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="http://schema.org/"
+     xmlns:example="http://example.org/"
+     xmlns:webprotege="http://webprotege.stanford.edu/">
+    <owl:Ontology rdf:about="http://www.example.org/myontology">
+        <owl:versionIRI rdf:resource="http://example.org/myontology/version/1.0"/>
+        <rdfs:comment>This ontology describes the domain of ice cream shop menu items.</rdfs:comment>
+        <rdfs:label>Ice Cream Shop Menu Ontology</rdfs:label>
+        <owl:versionInfo>Version 1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/hasMenuSection -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/hasMenuSection"/>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/name"/>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDjU8rYd7JEFailOBrUVjeP -->
+
+    <owl:AnnotationProperty rdf:about="http://webprotege.stanford.edu/RDjU8rYd7JEFailOBrUVjeP"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#minCardinality -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#minCardinality"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#someValuesFrom -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/hasItem -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/hasItem">
+        <owl:inverseOf rdf:resource="http://example.org/isItemOf"/>
+        <rdfs:domain rdf:resource="http://schema.org/MenuSection"/>
+        <rdfs:range rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the relationship between a menu section and its associated menu items.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has Item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/isItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/isItemOf">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://schema.org/MenuSection"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the inverse relationship of hasItem.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is item of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/isMenuItemOf -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/isMenuItemOf">
+        <owl:inverseOf rdf:resource="http://schema.org/hasMenuItem"/>
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://schema.org/MenuSection"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the inverse relationship of hasMenuItem.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is menu item of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.org/isMenuOf -->
+
+    <owl:ObjectProperty rdf:about="http://example.org/isMenuOf">
+        <owl:inverseOf rdf:resource="http://schema.org/hasMenu"/>
+        <rdfs:domain rdf:resource="http://schema.org/Menu"/>
+        <rdfs:range rdf:resource="http://schema.org/IceCreamShop"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the inverse relationship of hasMenu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is menu of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/hasMenu -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/hasMenu">
+        <rdfs:domain rdf:resource="http://schema.org/IceCreamShop"/>
+        <rdfs:range rdf:resource="http://schema.org/Menu"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the relationship between an ice cream shop and its menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has menu</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/hasMenuItem -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/hasMenuItem">
+        <rdfs:domain rdf:resource="http://schema.org/MenuSection"/>
+        <rdfs:range rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the relationship between a menu section and its associated menu items.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has Menu Item</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPrice">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceFor1Litre -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceFor1Litre">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for 1 litre size.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for 1 litre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceFor2Litre -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceFor2Litre">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for 2 litre size.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for 2 litre</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceFor2Scoops -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceFor2Scoops">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for 2 scoops.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for 2 scoops</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceFor3Scoops -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceFor3Scoops">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for 3 scoops.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for 3 scoops</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceFor4Scoops -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceFor4Scoops">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for 4 scoops.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for 4 scoops</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceForLarge -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceForLarge">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for the large size.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for large</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceForMedium -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceForMedium">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for the medium size.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for medium</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasPriceForSmall -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasPriceForSmall">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the price of a menu item for the small size.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has price for small</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.org/hasSize -->
+
+    <owl:DatatypeProperty rdf:about="http://example.org/hasSize">
+        <rdfs:domain rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies the size of the menu item.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/ColdCoffee -->
+
+    <owl:Class rdf:about="http://example.org/ColdCoffee">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the concept of cold coffee within the ontology.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ColdCoffee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/Cone -->
+
+    <owl:Class rdf:about="http://example.org/Cone">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the concept of an ice cream cone within the ontology.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cone</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/ExtraTopping -->
+
+    <owl:Class rdf:about="http://example.org/ExtraTopping">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents additional toppings that can be added to ice cream or other desserts.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ExtraTopping</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/Faludas -->
+
+    <owl:Class rdf:about="http://example.org/Faludas">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents various types of faluda available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Faludas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/IceCreamShakes -->
+
+    <owl:Class rdf:about="http://example.org/IceCreamShakes">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents various flavors of ice cream shakes available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IceCreamShakes</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/KulfiFlavor -->
+
+    <owl:Class rdf:about="http://example.org/KulfiFlavor">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents different flavors of kulfi available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KulfiFlavor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/Margarita -->
+
+    <owl:Class rdf:about="http://example.org/Margarita">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents different flavors of margarita available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Margarita</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/OurSpecialities -->
+
+    <owl:Class rdf:about="http://example.org/OurSpecialities">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents special ice cream flavors or items offered by the ice cream shop.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OurSpecialities</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/RefreshJuice -->
+
+    <owl:Class rdf:about="http://example.org/RefreshJuice">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents various types of refreshing juices offered in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RefreshJuice</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/RegularFlavor -->
+
+    <owl:Class rdf:about="http://example.org/RegularFlavor">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents regular flavors of ice cream available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RegularFlavor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://example.org/SpecialFlavor -->
+
+    <owl:Class rdf:about="http://example.org/SpecialFlavor">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents special flavors of ice cream available in the menu.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpecialFlavor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00001002 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00001002">
+        <rdfs:subClassOf rdf:resource="http://schema.org/MenuSection"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents different beverages offered in the menu.</rdfs:comment>
+        <rdfs:label>Beverage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/FOODON_00002403 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_00002403">
+        <rdfs:subClassOf rdf:resource="http://schema.org/MenuSection"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents various flavors and types of ice cream available in the menu.</rdfs:comment>
+        <rdfs:label>Ice cream</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/IceCreamShop -->
+
+    <owl:Class rdf:about="http://schema.org/IceCreamShop">
+        <owl:disjointWith rdf:resource="http://schema.org/Menu"/>
+        <owl:disjointWith rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the concept of an ice cream shop within the ontology.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IceCreamShop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Menu -->
+
+    <owl:Class rdf:about="http://schema.org/Menu">
+        <owl:disjointWith rdf:resource="http://schema.org/MenuItem"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents the menu offerings of an ice cream shop or similar establishment.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menu</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/MenuItem -->
+
+    <owl:Class rdf:about="http://schema.org/MenuItem">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents individual items listed on a menu, such as specific ice cream flavors, beverages, or other menu options.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MenuItem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/MenuSection -->
+
+    <owl:Class rdf:about="http://schema.org/MenuSection">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Represents a section or category within a menu, grouping related items together.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Menu Section</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.org/AmericanColdCoffee -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/AmericanColdCoffee">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BabyScoop -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BabyScoop">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BeverageSection -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BeverageSection">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_00001002"/>
+        <schema:name>Beverage Section</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Block3in1Flavor -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Block3in1Flavor">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor1Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceFor1Litre>
+        <example:hasPriceFor2Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</example:hasPriceFor2Litre>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1litre</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2litre</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Blueberry -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Blueberry">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BlueberryMargarita -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BlueberryMargarita">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BlueberryShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BlueberryShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Bounty -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Bounty">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BountyShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BountyShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/BrownieShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/BrownieShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ChocolateBrownie -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ChocolateBrownie">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ChocolateChip -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ChocolateChip">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ChocolateShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ChocolateShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/CocktailNutsSlice -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/CocktailNutsSlice">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/CocktailNutsSyrup -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/CocktailNutsSyrup">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">70</example:hasPrice>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/CoffeeFudge -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/CoffeeFudge">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ColdCoffee1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ColdCoffee1">
+        <rdf:type rdf:resource="http://example.org/ColdCoffee"/>
+        <example:hasItem rdf:resource="http://example.org/RegularColdCoffee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ColdCoffee2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ColdCoffee2">
+        <rdf:type rdf:resource="http://example.org/ColdCoffee"/>
+        <example:hasItem rdf:resource="http://example.org/AmericanColdCoffee"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ColdCoffee3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ColdCoffee3">
+        <rdf:type rdf:resource="http://example.org/ColdCoffee"/>
+        <example:hasItem rdf:resource="http://example.org/IceLatte"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Cone1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Cone1">
+        <rdf:type rdf:resource="http://example.org/Cone"/>
+        <example:hasItem rdf:resource="http://example.org/WaffleCone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Cone2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Cone2">
+        <rdf:type rdf:resource="http://example.org/Cone"/>
+        <example:hasItem rdf:resource="http://example.org/DipinBar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Crunch -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Crunch">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/CrunchKulfi -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/CrunchKulfi">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/DesiFaluda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/DesiFaluda">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">380</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/DipinBar -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/DipinBar">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/DoMoreIceCreamParlor -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/DoMoreIceCreamParlor">
+        <rdf:type rdf:resource="http://schema.org/IceCreamShop"/>
+        <schema:hasMenu rdf:resource="http://example.org/Menu1"/>
+        <schema:name>DoMore Ice Cream Parlor</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ExtraTopping1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ExtraTopping1">
+        <rdf:type rdf:resource="http://example.org/ExtraTopping"/>
+        <example:hasItem rdf:resource="http://example.org/CocktailNutsSyrup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/ExtraTopping2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/ExtraTopping2">
+        <rdf:type rdf:resource="http://example.org/ExtraTopping"/>
+        <example:hasItem rdf:resource="http://example.org/CocktailNutsSlice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda1">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/RoyalFaluda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda2">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/KarachiFaluda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda3">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/SurpriseFaluda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda4">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/Khushi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda5">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/DesiFaluda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Faluda6 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Faluda6">
+        <rdf:type rdf:resource="http://example.org/Faludas"/>
+        <example:hasItem rdf:resource="http://example.org/KasuriFaluda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/FreshVanilla -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/FreshVanilla">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/GateauParafait -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/GateauParafait">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor1Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceFor1Litre>
+        <example:hasPriceFor2Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</example:hasPriceFor2Litre>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1litre</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2litre</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamSection -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamSection">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_00002403"/>
+        <schema:name>Ice Cream Section</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake1">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/FreshVanilla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake10 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake10">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/TuttiFruityShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake11 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake11">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/PistaShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake12 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake12">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/KulfaShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake13 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake13">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/RippleStrawberryShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake14 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake14">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/RoastedBadamShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake15 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake15">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/StrawberryCheeseShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake16 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake16">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/KhoyaKhajur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake17 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake17">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/KajuBadam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake2">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/BlueberryShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake3">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/ChocolateShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake4">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/KitKatShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake5">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/OreoShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake6 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake6">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/BountyShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake7 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake7">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/BrownieShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake8 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake8">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/PinaColadaShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceCreamShake9 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceCreamShake9">
+        <rdf:type rdf:resource="http://example.org/IceCreamShakes"/>
+        <example:hasItem rdf:resource="http://example.org/MangoShake"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/IceLatte -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/IceLatte">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KajuBadam -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KajuBadam">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">650</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KarachiFaluda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KarachiFaluda">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">380</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KasuriFaluda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KasuriFaluda">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">380</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KhoyaKhajur -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KhoyaKhajur">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">650</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Khushi -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Khushi">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KitKatShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KitKatShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Kulfa -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Kulfa">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KulfaShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KulfaShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KulfiFlavor1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KulfiFlavor1">
+        <rdf:type rdf:resource="http://example.org/KulfiFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/PistaKulfi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KulfiFlavor2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KulfiFlavor2">
+        <rdf:type rdf:resource="http://example.org/KulfiFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/CrunchKulfi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/KulfiFlavor3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/KulfiFlavor3">
+        <rdf:type rdf:resource="http://example.org/KulfiFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/RoastedBadamKulfi"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/LaminateMargarita -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/LaminateMargarita">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Mango -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Mango">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/MangoShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/MangoShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Margarita1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Margarita1">
+        <rdf:type rdf:resource="http://example.org/Margarita"/>
+        <example:hasItem rdf:resource="http://example.org/MintMargarita"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Margarita2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Margarita2">
+        <rdf:type rdf:resource="http://example.org/Margarita"/>
+        <example:hasItem rdf:resource="http://example.org/LaminateMargarita"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Margarita3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Margarita3">
+        <rdf:type rdf:resource="http://example.org/Margarita"/>
+        <example:hasItem rdf:resource="http://example.org/BlueberryMargarita"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Margarita4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Margarita4">
+        <rdf:type rdf:resource="http://example.org/Margarita"/>
+        <example:hasItem rdf:resource="http://example.org/MintGlacier"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Margarita5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Margarita5">
+        <rdf:type rdf:resource="http://example.org/Margarita"/>
+        <example:hasItem rdf:resource="http://example.org/Wuis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Menu1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Menu1">
+        <rdf:type rdf:resource="http://schema.org/Menu"/>
+        <schema:hasMenuSection rdf:resource="http://example.org/MenuSection1"/>
+        <schema:hasMenuSection rdf:resource="http://example.org/MenuSection2"/>
+        <schema:name>Main Menu</schema:name>
+        <webprotege:RDjU8rYd7JEFailOBrUVjeP rdf:resource="http://example.org/MenuSection1"/>
+        <webprotege:RDjU8rYd7JEFailOBrUVjeP rdf:resource="http://example.org/MenuSection2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/MenuSection1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/MenuSection1">
+        <rdf:type rdf:resource="http://schema.org/MenuSection"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/BabyScoop"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Block3in1Flavor"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Blueberry"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Bounty"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/ChocolateBrownie"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/ChocolateChip"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/CoffeeFudge"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Crunch"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/DipinBar"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/GateauParafait"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Kulfa"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Mango"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/OreoCookies"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Pineapple"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Pista"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RippleStrawberry"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RoastedBadam"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Rose"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Sicilian"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/StrawberryCheese"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/TuttiFruity"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Vanilla"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/WaffleCone"/>
+        <schema:name>Ice Cream Section</schema:name>
+        <webprotege:RDjU8rYd7JEFailOBrUVjeP rdf:resource="http://example.org/IceCreamSection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/MenuSection2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/MenuSection2">
+        <rdf:type rdf:resource="http://schema.org/MenuSection"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/AmericanColdCoffee"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/BlueberryMargarita"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/BlueberryShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/BountyShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/BrownieShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/ChocolateShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/CocktailNutsSlice"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/CocktailNutsSyrup"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/DesiFaluda"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/FreshVanilla"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/IceLatte"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KajuBadam"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KarachiFaluda"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KasuriFaluda"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KhoyaKhajur"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Khushi"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KitKatShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/KulfaShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/LaminateMargarita"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/MangoShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/MintGlacier"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/MintMargarita"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/OreoShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Pasca"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PeachChiller"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PinaColada"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PinaColadaShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PineappleFreeze"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PinkLady"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/PistaShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RegularColdCoffee"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RippleStrawberryShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RoastedBadamShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/RoyalFaluda"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/StrawberryCheeseShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/SurpriseFaluda"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/TuttiFruityShake"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/WaffleStick"/>
+        <schema:hasMenuItem rdf:resource="http://example.org/Wuis"/>
+        <schema:name>Beverage Section</schema:name>
+        <webprotege:RDjU8rYd7JEFailOBrUVjeP rdf:resource="http://example.org/BeverageSection"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/MintGlacier -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/MintGlacier">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/MintMargarita -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/MintMargarita">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/OreoCookies -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/OreoCookies">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/OreoShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/OreoShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/OurSpeciality1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/OurSpeciality1">
+        <rdf:type rdf:resource="http://example.org/OurSpecialities"/>
+        <example:hasItem rdf:resource="http://example.org/Block3in1Flavor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/OurSpeciality2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/OurSpeciality2">
+        <rdf:type rdf:resource="http://example.org/OurSpecialities"/>
+        <example:hasItem rdf:resource="http://example.org/Sicilian"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/OurSpeciality3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/OurSpeciality3">
+        <rdf:type rdf:resource="http://example.org/OurSpecialities"/>
+        <example:hasItem rdf:resource="http://example.org/GateauParafait"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Pasca -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Pasca">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PeachChiller -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PeachChiller">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PinaColada -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PinaColada">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PinaColadaShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PinaColadaShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Pineapple -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Pineapple">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PineappleFreeze -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PineappleFreeze">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PinkLady -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PinkLady">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Pista -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Pista">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PistaKulfi -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PistaKulfi">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/PistaShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/PistaShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RefreshJuice1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RefreshJuice1">
+        <rdf:type rdf:resource="http://example.org/RefreshJuice"/>
+        <example:hasItem rdf:resource="http://example.org/PinaColada"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RefreshJuice2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RefreshJuice2">
+        <rdf:type rdf:resource="http://example.org/RefreshJuice"/>
+        <example:hasItem rdf:resource="http://example.org/PinkLady"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RefreshJuice3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RefreshJuice3">
+        <rdf:type rdf:resource="http://example.org/RefreshJuice"/>
+        <example:hasItem rdf:resource="http://example.org/PeachChiller"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RefreshJuice4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RefreshJuice4">
+        <rdf:type rdf:resource="http://example.org/RefreshJuice"/>
+        <example:hasItem rdf:resource="http://example.org/PineappleFreeze"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RefreshJuice5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RefreshJuice5">
+        <rdf:type rdf:resource="http://example.org/RefreshJuice"/>
+        <example:hasItem rdf:resource="http://example.org/Pasca"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularColdCoffee -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularColdCoffee">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor1">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Vanilla"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor10 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor10">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Pineapple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor11 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor11">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/BabyScoop"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor2">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Crunch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor3">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Mango"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor4">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/TuttiFruity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor5">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Blueberry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor6 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor6">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Rose"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor7 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor7">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Pista"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor8 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor8">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Kulfa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RegularFlavor9 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RegularFlavor9">
+        <rdf:type rdf:resource="http://example.org/RegularFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/Bounty"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RippleStrawberry -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RippleStrawberry">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RippleStrawberryShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RippleStrawberryShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RoastedBadam -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RoastedBadam">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RoastedBadamKulfi -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RoastedBadamKulfi">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RoastedBadamShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RoastedBadamShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">550</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Rose -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Rose">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/RoyalFaluda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/RoyalFaluda">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">250</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Sicilian -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Sicilian">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor1Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceFor1Litre>
+        <example:hasPriceFor2Litre rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</example:hasPriceFor2Litre>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1litre</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2litre</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor1 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor1">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/CoffeeFudge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor2 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor2">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/RoastedBadam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor3 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor3">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/ChocolateBrownie"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor4 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor4">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/ChocolateChip"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor5 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor5">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/StrawberryCheese"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor6 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor6">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/RippleStrawberry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SpecialFlavor7 -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SpecialFlavor7">
+        <rdf:type rdf:resource="http://example.org/SpecialFlavor"/>
+        <example:hasItem rdf:resource="http://example.org/OreoCookies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/StrawberryCheese -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/StrawberryCheese">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/StrawberryCheeseShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/StrawberryCheeseShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/SurpriseFaluda -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/SurpriseFaluda">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">380</example:hasPriceForLarge>
+        <example:hasPriceForMedium rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceForMedium>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/TuttiFruity -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/TuttiFruity">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/TuttiFruityShake -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/TuttiFruityShake">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceForLarge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</example:hasPriceForLarge>
+        <example:hasPriceForSmall rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">350</example:hasPriceForSmall>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Large</example:hasSize>
+        <example:hasSize rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Small</example:hasSize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Vanilla -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Vanilla">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPriceFor2Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPriceFor2Scoops>
+        <example:hasPriceFor3Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</example:hasPriceFor3Scoops>
+        <example:hasPriceFor4Scoops rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</example:hasPriceFor4Scoops>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/WaffleCone -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/WaffleCone">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</example:hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/WaffleStick -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/WaffleStick">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.org/Wuis -->
+
+    <owl:NamedIndividual rdf:about="http://example.org/Wuis">
+        <rdf:type rdf:resource="http://schema.org/MenuItem"/>
+        <example:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</example:hasPrice>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1litre</owl:someValuesFrom>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2litre</owl:someValuesFrom>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:someValuesFrom>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:someValuesFrom>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:someValuesFrom>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</owl:someValuesFrom>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</owl:someValuesFrom>
+        <owl:someValuesFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</owl:someValuesFrom>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://example.org/hasMenu">
+        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/ColdCoffee"/>
+            <rdf:Description rdf:about="http://example.org/Faludas"/>
+            <rdf:Description rdf:about="http://example.org/IceCreamShakes"/>
+            <rdf:Description rdf:about="http://example.org/Margarita"/>
+            <rdf:Description rdf:about="http://example.org/RefreshJuice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.org/Cone"/>
+            <rdf:Description rdf:about="http://example.org/ExtraTopping"/>
+            <rdf:Description rdf:about="http://example.org/KulfiFlavor"/>
+            <rdf:Description rdf:about="http://example.org/OurSpecialities"/>
+            <rdf:Description rdf:about="http://example.org/RegularFlavor"/>
+            <rdf:Description rdf:about="http://example.org/SpecialFlavor"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi -->
+
